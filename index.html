@@ -7,14 +7,8 @@
   <link rel="stylesheet" href="style.css" />
 
   <!-- Supabase JS -->
-  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
-  <script>
-    const supabaseClient = supabase.createClient(
-      'https://bsmgrdhsuzzmsczyazms.supabase.co',
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJzbWdyZGhzdXp6bXNjenlhem1zIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjU0ODE2OTcsImV4cCI6MjA4MTA1NzY5N30.8V3u9tazScrkxQVsKiXg2EFGTCfyM-YFr4X-o-XOI5M'
-    );
-  </script>
-  <!-- Dein Script NUR EINMAL -->
+  <script src="https://unpkg.com/@supabase/supabase-js@2" defer></script>
+  <!-- Dein Script lädt NACH Supabase und erstellt den Client selbst -->
   <script defer src="script.js"></script>
 </head>
 <body>
