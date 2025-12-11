@@ -1,0 +1,170 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 40px 0;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.container,
+.table-container {
+    background-color: #fff;
+    padding: 20px 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto;
+    box-sizing: border-box;
+}
+
+/* Input */
+.input-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.input-container input {
+    flex: 1;
+    padding: 8px 12px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.input-container input:focus {
+    border-color: #4da6ff;
+    outline: none;
+}
+
+.input-container button {
+    padding: 8px 16px;
+    background-color: #4da6ff;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.input-container button:hover {
+    background-color: #3399ff;
+}
+
+/* Aktuelle Gewohnheiten */
+#acthabits {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#acthabits li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+#acthabits li:hover {
+    background-color: #e6f2ff;
+}
+
+#acthabits li input[type="checkbox"] {
+    transform: scale(1.2);
+    margin-right: 10px;
+}
+
+#acthabits li button {
+    background-color: #ff4d4f;
+    border: none;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+#acthabits li button:hover {
+    background-color: #d9363e;
+}
+
+/* Container für Tabelle */
+.table-container {
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+/* Tabelle */
+.history-table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    min-width: 900px;              /* genug Grundbreite, aber flexibel */
+    table-layout: auto;            /* Breite nach Inhalt berechnen lassen */
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* alle Zellen */
+.history-table th,
+.history-table td {
+    padding: 10px 8px;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 13px;
+    /* keine feste width hier, damit Spalten sich anpassen können */
+}
+
+/* Header */
+.history-table th {
+    background-color: #f7f7f7;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+/* ERSTE SPALTE: Name der Gewohnheit */
+.history-table th:first-child,
+.history-table td:first-child {
+    text-align: left;
+    padding-left: 12px;
+    font-weight: 600;
+    color: #333;
+    white-space: nowrap;    /* kein Zeilenumbruch */
+    overflow: visible;      /* nichts abschneiden */
+    text-overflow: clip;    /* kein „…“ */
+}
+
+/* restliche Spalten (Tage) – schmal, aber flexibel */
+.history-table th:not(:first-child),
+.history-table td:not(:first-child) {
+    min-width: 32px;        /* Platz für Datum/✓ */
+    text-align: center;
+}
+
+/* Checkmark-Zellen */
+.history-table td {
+    font-weight: 600;
+    color: #4da6ff;
+}
+
+/* Zeilen-Hover-Effekt */
+.history-table tr:hover td {
+    background-color: #f5fbff;
+}

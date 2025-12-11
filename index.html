@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Habit Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Supabase JS -->
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  <script>
+    const supabaseClient = supabase.createClient(
+      'https://bsmgrdhsuzzmsczyazms.supabase.co',
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJzbWdyZGhzdXp6bXNjenlhem1zIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjU0ODE2OTcsImV4cCI6MjA4MTA1NzY5N30.8V3u9tazScrkxQVsKiXg2EFGTCfyM-YFr4X-o-XOI5M'
+    );
+  </script>
+  <!-- Dein Script NUR EINMAL -->
+  <script defer src="script.js"></script>
+</head>
+<body>
+
+<h1>Gewohnheitstracker</h1>
+
+<div class="container">
+  <h1>Login / Registrieren</h1>
+  <input id="email" type="email" placeholder="E-Mail" />
+  <input id="password" type="password" placeholder="Passwort" />
+  <button id="signupbtn">Registrieren</button>
+  <button id="loginbtn">Login</button>
+  <button id="logoutbtn">Logout</button>
+</div>
+
+<div class="container">
+  <h1>Aktuelle Gewohnheiten</h1>
+
+  <div class="input-container">
+    <input id="habitinput" type="text" placeholder="Neue Gewohnheit" />
+    <button id="addhabitbtn">Hinzufügen</button>
+  </div>
+
+  <ul id="acthabits"></ul>
+</div>
+
+<div class="table-container">
+  <h1>Letzte 30 Tage</h1>
+  <table id="historytable" class="history-table"></table>
+</div>
+
+</body>
+</html>
